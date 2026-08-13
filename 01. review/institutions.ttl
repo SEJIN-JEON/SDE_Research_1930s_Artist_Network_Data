@@ -1,0 +1,780 @@
+@prefix art:    <https://1930s-art-network.example.org/schema#> .
+@prefix person: <https://1930s-art-network.example.org/person/> .
+@prefix inst:   <https://1930s-art-network.example.org/institution/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+inst:I000001 a art:Group ; art:name " 시라카바(白樺)" .
+inst:I000002 a art:Periodical ; art:name "(기독교)종교교육" .
+inst:I000003 a art:Group ; art:name "13인 구락부" .
+inst:I000004 a art:Group ; art:name "SPA양화연구소" .
+inst:I000005 a art:School ; art:name "가나카와중학" .
+inst:I000006 a art:Group ; art:name "가두극장" .
+inst:I000007 a art:School ; art:name "가와바타 미술학교" .
+inst:I000008 a art:Periodical ; art:name "가정잡지(1906)" .
+inst:I000009 a art:Periodical ; art:name "가정잡지(1922)" .
+inst:I000010 a art:Periodical ; art:name "가정지우" .
+inst:I000011 a art:Periodical ; art:name "가톨릭소년" .
+inst:I000012 a art:Periodical ; art:name "가톨릭연구" .
+inst:I000013 a art:Periodical ; art:name "가톨릭조선" .
+inst:I000014 a art:Periodical ; art:name "가톨릭청년" .
+inst:I000015 a art:Periodical ; art:name "감리회보" .
+inst:I000016 a art:Place ; art:name "강원도 이천" .
+inst:I000017 a art:Place ; art:name "강원도 철원" .
+inst:I000018 a art:Place ; art:name "강원도 홍천" .
+inst:I000019 a art:School ; art:name "강진보통학교" .
+inst:I000020 a art:Periodical ; art:name "개벽" .
+inst:I000021 a art:Place ; art:name "개성" .
+inst:I000022 a art:School ; art:name "개성공립상업학교" .
+inst:I000023 a art:School ; art:name "개성공립제일보통학교" .
+inst:I000024 a art:School ; art:name "개성무역상업학교" .
+inst:I000025 a art:Workplace ; art:name "개성부립박물관" .
+inst:I000026 a art:School ; art:name "개성전수학교" .
+inst:I000027 a art:School ; art:name "개성제일공립보통학교" .
+inst:I000028 a art:Group ; art:name "개조사" .
+inst:I000029 a art:Periodical ; art:name "건축조선" .
+inst:I000030 a art:School ; art:name "게이오대학교" .
+inst:I000031 a art:Group ; art:name "게키죠산카" .
+inst:I000032 a art:Place ; art:name "경기도 개성" .
+inst:I000033 a art:Group ; art:name "경기도 건축대서사" .
+inst:I000034 a art:Place ; art:name "경기도 수원" .
+inst:I000035 a art:Place ; art:name "경기도 화성" .
+inst:I000036 a art:Place ; art:name "경남 거제" .
+inst:I000037 a art:Place ; art:name "경북 대구" .
+inst:I000038 a art:Place ; art:name "경북 선산" .
+inst:I000039 a art:Place ; art:name "경상남도" .
+inst:I000040 a art:Place ; art:name "경상북도" .
+inst:I000041 a art:Place ; art:name "경상북도 대구" .
+inst:I000042 a art:Periodical ; art:name "경성 미쓰코시 백화점" .
+inst:I000043 a art:School ; art:name "경성고등공업학교" .
+inst:I000044 a art:School ; art:name "경성공립고등보통학교" .
+inst:I000045 a art:Workplace ; art:name "경성방송국" .
+inst:I000046 a art:School ; art:name "경성법학전문학교" .
+inst:I000047 a art:Workplace ; art:name "경성보육학교" .
+inst:I000048 a art:School ; art:name "경성사범부속보통학교" .
+inst:I000049 a art:School ; art:name "경성사범학교" .
+inst:I000050 a art:School ; art:name "경성양정고등보통학교" .
+inst:I000051 a art:Workplace ; art:name "경성여자미술학교" .
+inst:I000052 a art:Workplace ; art:name "경성여자상업고등학교" .
+inst:I000053 a art:School ; art:name "경성오성학교" .
+inst:I000054 a art:School ; art:name "경성전수학교" .
+inst:I000055 a art:School ; art:name "경성제1고등보통학교" .
+inst:I000056 a art:School ; art:name "경성제2고등보통학교" .
+inst:I000057 a art:School ; art:name "경성제국대학교" .
+inst:I000058 a art:School ; art:name "경성중동학교" .
+inst:I000059 a art:Workplace ; art:name "경성중앙방송국" .
+inst:I000060 a art:Workplace ; art:name "경성중학교" .
+inst:I000061 a art:Group ; art:name "경성청년회" .
+inst:I000062 a art:Group ; art:name "경성촬영소" .
+inst:I000063 a art:School ; art:name "경성회화학원" .
+inst:I000064 a art:School ; art:name "경신고등보통학교" .
+inst:I000065 a art:School ; art:name "경신중학교" .
+inst:I000066 a art:Workplace ; art:name "경향신문" .
+inst:I000067 a art:School ; art:name "계동보통학교" .
+inst:I000068 a art:Periodical ; art:name "계림" .
+inst:I000069 a art:Periodical ; art:name "계명" .
+inst:I000070 a art:Workplace ; art:name "계명구락부" .
+inst:I000071 a art:Periodical ; art:name "계명시보" .
+inst:I000072 a art:School ; art:name "계성학교" .
+inst:I000073 a art:Group ; art:name "고려미술회" .
+inst:I000074 a art:Group ; art:name "고려발명협회" .
+inst:I000075 a art:Group ; art:name "고려영화협회" .
+inst:I000076 a art:Workplace ; art:name "고성 금강고등학교" .
+inst:I000077 a art:Workplace ; art:name "고성 금강중학교" .
+inst:I000078 a art:Periodical ; art:name "고아" .
+inst:I000079 a art:Periodical ; art:name "고양" .
+inst:I000080 a art:Periodical ; art:name "공도" .
+inst:I000081 a art:Periodical ; art:name "공영" .
+inst:I000082 a art:Periodical ; art:name "공제" .
+inst:I000083 a art:School ; art:name "공주공립보통학교" .
+inst:I000084 a art:Periodical ; art:name "과학조선" .
+inst:I000085 a art:Periodical ; art:name "광업조선" .
+inst:I000086 a art:School ; art:name "광주공립고등보통학교" .
+inst:I000087 a art:School ; art:name "광주공립보통학교" .
+inst:I000088 a art:Periodical ; art:name "광화" .
+inst:I000089 a art:School ; art:name "교동보통학교" .
+inst:I000090 a art:Periodical ; art:name "교육춘추" .
+inst:I000091 a art:School ; art:name "교토 관서미술원" .
+inst:I000092 a art:Group ; art:name "구인회" .
+inst:I000093 a art:Group ; art:name "국립극장" .
+inst:I000094 a art:Periodical ; art:name "국민문학" .
+inst:I000095 a art:Group ; art:name "국민총력조선연맹" .
+inst:I000096 a art:Periodical ; art:name "국우" .
+inst:I000097 a art:Group ; art:name "극단 불개미" .
+inst:I000098 a art:Group ; art:name "극단 전선" .
+inst:I000099 a art:Periodical ; art:name "극예술" .
+inst:I000100 a art:Group ; art:name "극예술연구회" .
+inst:I000101 a art:Group ; art:name "극예술원" .
+inst:I000102 a art:Group ; art:name "극예술협회" .
+inst:I000103 a art:Group ; art:name "극장 삼과" .
+inst:I000104 a art:Group ; art:name "근대생활" .
+inst:I000105 a art:Periodical ; art:name "근우" .
+inst:I000106 a art:Periodical ; art:name "근화" .
+inst:I000107 a art:Periodical ; art:name "금강산" .
+inst:I000108 a art:Periodical ; art:name "금지" .
+inst:I000109 a art:Periodical ; art:name "기쁜소식" .
+inst:I000110 a art:Periodical ; art:name "나가자" .
+inst:I000111 a art:Group ; art:name "나고야 아방가르드 클럽" .
+inst:I000112 a art:Group ; art:name "나고야·포트아방가르드" .
+inst:I000113 a art:Group ; art:name "나운규프로덕션" .
+inst:I000114 a art:Group ; art:name "난파트리오" .
+inst:I000115 a art:Group ; art:name "남조선 조소문화협회" .
+inst:I000116 a art:Group ; art:name "남조선민전" .
+inst:I000117 a art:Workplace ; art:name "낭만사" .
+inst:I000118 a art:Periodical ; art:name "녀자지남" .
+inst:I000119 a art:Periodical ; art:name "농민(1930)" .
+inst:I000120 a art:Periodical ; art:name "농민생활" .
+inst:I000121 a art:Periodical ; art:name "농업과원예" .
+inst:I000122 a art:Periodical ; art:name "농업세게" .
+inst:I000123 a art:Periodical ; art:name "농업조선" .
+inst:I000124 a art:Periodical ; art:name "농촌" .
+inst:I000125 a art:Periodical ; art:name "농촌문헌" .
+inst:I000126 a art:Periodical ; art:name "농촌월보" .
+inst:I000127 a art:School ; art:name "니혼대학" .
+inst:I000128 a art:Workplace ; art:name "다방 69" .
+inst:I000129 a art:Workplace ; art:name "다방 무기" .
+inst:I000130 a art:Workplace ; art:name "다방 제비" .
+inst:I000131 a art:Periodical ; art:name "단층" .
+inst:I000132 a art:School ; art:name "대구사립교남학원고등학교" .
+inst:I000133 a art:Periodical ; art:name "대도" .
+inst:I000134 a art:Periodical ; art:name "대동아" .
+inst:I000135 a art:Periodical ; art:name "대조" .
+inst:I000136 a art:Periodical ; art:name "대중" .
+inst:I000137 a art:Periodical ; art:name "대중공론" .
+inst:I000138 a art:Periodical ; art:name "대중시보" .
+inst:I000139 a art:Periodical ; art:name "대중의학" .
+inst:I000140 a art:Periodical ; art:name "대중일기" .
+inst:I000141 a art:Periodical ; art:name "대평양" .
+inst:I000142 a art:Periodical ; art:name "대한민국미술전람회" .
+inst:I000143 a art:Workplace ; art:name "대한영화사" .
+inst:I000144 a art:Workplace ; art:name "대한영화협회" .
+inst:I000145 a art:Periodical ; art:name "대한자강회월보" .
+inst:I000146 a art:Periodical ; art:name "대한학회월보" .
+inst:I000147 a art:School ; art:name "도시샤대학교" .
+inst:I000148 a art:School ; art:name "도요야마중학교" .
+inst:I000149 a art:School ; art:name "도쿄 니시키시로중학교" .
+inst:I000150 a art:School ; art:name "도쿄 세이소쿠 영어학교" .
+inst:I000151 a art:School ; art:name "도쿄 세이조 중학교" .
+inst:I000152 a art:School ; art:name "도쿄 아오야마 학원" .
+inst:I000153 a art:School ; art:name "도쿄 조치대학" .
+inst:I000154 a art:Place ; art:name "도쿄 혼고" .
+inst:I000155 a art:Group ; art:name "도쿄 혼고 양화연구소" .
+inst:I000156 a art:School ; art:name "도쿄고등음악학원(구니다치음악대학)" .
+inst:I000157 a art:School ; art:name "도쿄대학교" .
+inst:I000158 a art:School ; art:name "도쿄미술학교" .
+inst:I000159 a art:Group ; art:name "도쿄신교향악단(nhk교향악당)" .
+inst:I000160 a art:School ; art:name "도쿄여자미술전문학교" .
+inst:I000161 a art:School ; art:name "도쿄외국어학교" .
+inst:I000162 a art:School ; art:name "도쿄음악학교" .
+inst:I000163 a art:Workplace ; art:name "도쿄일일신문" .
+inst:I000164 a art:School ; art:name "도호쿠 대학" .
+inst:I000165 a art:School ; art:name "도화교실" .
+inst:I000166 a art:Periodical ; art:name "독립" .
+inst:I000167 a art:Group ; art:name "독립미술가협회" .
+inst:I000168 a art:Group ; art:name "독립미술협회" .
+inst:I000169 a art:School ; art:name "동경일진영어학교" .
+inst:I000170 a art:Group ; art:name "동경학생예술좌" .
+inst:I000171 a art:Periodical ; art:name "동광" .
+inst:I000172 a art:Periodical ; art:name "동광총서" .
+inst:I000173 a art:School ; art:name "동광학교" .
+inst:I000174 a art:School ; art:name "동구여자상업학교" .
+inst:I000175 a art:Workplace ; art:name "동국대학교" .
+inst:I000176 a art:School ; art:name "동래공립고등보통학교" .
+inst:I000177 a art:Periodical ; art:name "동령" .
+inst:I000178 a art:Periodical ; art:name "동명" .
+inst:I000179 a art:Workplace ; art:name "동명사" .
+inst:I000180 a art:Group ; art:name "동미회" .
+inst:I000181 a art:Periodical ; art:name "동방평론" .
+inst:I000182 a art:Periodical ; art:name "동북경제" .
+inst:I000183 a art:Periodical ; art:name "동서의학보" .
+inst:I000184 a art:Periodical ; art:name "동성" .
+inst:I000185 a art:Workplace ; art:name "동아일보" .
+inst:I000186 a art:Group ; art:name "동양극장" .
+inst:I000187 a art:Workplace ; art:name "동양음악학교" .
+inst:I000188 a art:Periodical ; art:name "동양평론" .
+inst:I000189 a art:Periodical ; art:name "동인지 창작" .
+inst:I000190 a art:Periodical ; art:name "동인지 탐구" .
+inst:I000191 a art:Periodical ; art:name "동인학보" .
+inst:I000192 a art:Periodical ; art:name "동화" .
+inst:I000193 a art:Periodical ; art:name "되는대로" .
+inst:I000194 a art:Periodical ; art:name "등대(1926)" .
+inst:I000195 a art:Periodical ; art:name "등대(1929)" .
+inst:I000196 a art:Periodical ; art:name "룡쳔검" .
+inst:I000197 a art:School ; art:name "릿교대학" .
+inst:I000198 a art:School ; art:name "릿교중학교" .
+inst:I000199 a art:Group ; art:name "마보(MAVO)" .
+inst:I000200 a art:Periodical ; art:name "만국부인" .
+inst:I000201 a art:Workplace ; art:name "만주 광명고등여학교" .
+inst:I000202 a art:Workplace ; art:name "만주 광명중학교" .
+inst:I000203 a art:Workplace ; art:name "만주 동흥중학교" .
+inst:I000204 a art:School ; art:name "만주 명동중학교" .
+inst:I000205 a art:Group ; art:name "만주 아방·가르드 예술가클럽" .
+inst:I000206 a art:Periodical ; art:name "만화만문" .
+inst:I000207 a art:School ; art:name "매동소학교" .
+inst:I000208 a art:Periodical ; art:name "매일신보" .
+inst:I000209 a art:Periodical ; art:name "맥" .
+inst:I000210 a art:Workplace ; art:name "맥사" .
+inst:I000211 a art:Group ; art:name "메가폰" .
+inst:I000212 a art:School ; art:name "메이지학원" .
+inst:I000213 a art:Periodical ; art:name "면려회보" .
+inst:I000214 a art:Periodical ; art:name "모던조선" .
+inst:I000215 a art:Periodical ; art:name "목마" .
+inst:I000216 a art:Group ; art:name "목일회" .
+inst:I000217 a art:Periodical ; art:name "무대" .
+inst:I000218 a art:Periodical ; art:name "무산자" .
+inst:I000219 a art:Group ; art:name "무용연구소" .
+inst:I000220 a art:Periodical ; art:name "문명" .
+inst:I000221 a art:Periodical ; art:name "문산당" .
+inst:I000222 a art:Periodical ; art:name "문예공론" .
+inst:I000223 a art:Periodical ; art:name "문예광" .
+inst:I000224 a art:Group ; art:name "문예동아리 휘문" .
+inst:I000225 a art:Periodical ; art:name "문예시대" .
+inst:I000226 a art:Periodical ; art:name "문예운동" .
+inst:I000227 a art:Periodical ; art:name "문예월간" .
+inst:I000228 a art:Periodical ; art:name "문장" .
+inst:I000229 a art:Periodical ; art:name "문학(1932)" .
+inst:I000230 a art:Periodical ; art:name "문학(1934)" .
+inst:I000231 a art:Periodical ; art:name "문학(1936)" .
+inst:I000232 a art:Group ; art:name "문학가동맹" .
+inst:I000233 a art:Periodical ; art:name "문학건설" .
+inst:I000234 a art:Group ; art:name "문학예술총동맹 " .
+inst:I000235 a art:Periodical ; art:name "문학창조" .
+inst:I000236 a art:Group ; art:name "문화건설중앙협의회" .
+inst:I000237 a art:Workplace ; art:name "문화시보" .
+inst:I000238 a art:Periodical ; art:name "문화시사" .
+inst:I000239 a art:School ; art:name "미국 건 음악학교" .
+inst:I000240 a art:School ; art:name "미국 시카고 무디성경학교" .
+inst:I000241 a art:Workplace ; art:name "미국 신시내티교향악단" .
+inst:I000242 a art:School ; art:name "미국 신시내티음악원" .
+inst:I000243 a art:School ; art:name "미국 템플대학 음악대학" .
+inst:I000244 a art:Group ; art:name "미술문화협회" .
+inst:I000245 a art:Periodical ; art:name "미즈에" .
+inst:I000246 a art:Workplace ; art:name "민주일보" .
+inst:I000247 a art:Workplace ; art:name "민주주의 민족전선" .
+inst:I000248 a art:Group ; art:name "바라크 장식사" .
+inst:I000249 a art:Workplace ; art:name "박길룡건축사무소" .
+inst:I000250 a art:Periodical ; art:name "박문" .
+inst:I000251 a art:Periodical ; art:name "반도の광" .
+inst:I000252 a art:Periodical ; art:name "반도산업" .
+inst:I000253 a art:Periodical ; art:name "반도시론" .
+inst:I000254 a art:Periodical ; art:name "반도의 빛" .
+inst:I000255 a art:Group ; art:name "발명학회" .
+inst:I000256 a art:Periodical ; art:name "방송지우" .
+inst:I000257 a art:Periodical ; art:name "배달공론" .
+inst:I000258 a art:School ; art:name "배재고등보통학교" .
+inst:I000259 a art:Periodical ; art:name "백광" .
+inst:I000260 a art:Group ; art:name "백남프로덕션" .
+inst:I000261 a art:Periodical ; art:name "백두산" .
+inst:I000262 a art:Group ; art:name "백만양화회" .
+inst:I000263 a art:Group ; art:name "백만회" .
+inst:I000264 a art:Periodical ; art:name "백악" .
+inst:I000265 a art:Group ; art:name "백우회" .
+inst:I000266 a art:Periodical ; art:name "백웅" .
+inst:I000267 a art:Periodical ; art:name "백조" .
+inst:I000268 a art:Periodical ; art:name "백파" .
+inst:I000269 a art:Periodical ; art:name "별건곤" .
+inst:I000270 a art:Periodical ; art:name "별나라" .
+inst:I000271 a art:Periodical ; art:name "보건운동" .
+inst:I000272 a art:Periodical ; art:name "보성" .
+inst:I000273 a art:School ; art:name "보성고등보통학교" .
+inst:I000274 a art:School ; art:name "보흥학교" .
+inst:I000275 a art:Periodical ; art:name "복음운동" .
+inst:I000276 a art:Periodical ; art:name "부녀세계" .
+inst:I000277 a art:Periodical ; art:name "부녀지광" .
+inst:I000278 a art:Periodical ; art:name "부인" .
+inst:I000279 a art:Periodical ; art:name "부인공론" .
+inst:I000280 a art:Workplace ; art:name "북선일일" .
+inst:I000281 a art:Periodical ; art:name "북성" .
+inst:I000282 a art:Group ; art:name "북조선문학예술총동맹" .
+inst:I000283 a art:Group ; art:name "북지황군위문단" .
+inst:I000284 a art:Group ; art:name "북한 국립미술제작소" .
+inst:I000285 a art:Group ; art:name "북한 최고인민회" .
+inst:I000286 a art:Periodical ; art:name "분투" .
+inst:I000287 a art:Periodical ; art:name "불교" .
+inst:I000288 a art:Periodical ; art:name "불교진흥회월보" .
+inst:I000289 a art:Periodical ; art:name "불일" .
+inst:I000290 a art:Periodical ; art:name "불청운동" .
+inst:I000291 a art:Periodical ; art:name "붉은져고리" .
+inst:I000292 a art:Periodical ; art:name "비판" .
+inst:I000293 a art:Periodical ; art:name "사명" .
+inst:I000294 a art:Periodical ; art:name "사조" .
+inst:I000295 a art:Group ; art:name "사진협회" .
+inst:I000296 a art:Periodical ; art:name "사해공론" .
+inst:I000297 a art:Group ; art:name "삭성회" .
+inst:I000298 a art:Periodical ; art:name "산문" .
+inst:I000299 a art:Periodical ; art:name "산업" .
+inst:I000300 a art:Periodical ; art:name "산업계" .
+inst:I000301 a art:Group ; art:name "삼과회" .
+inst:I000302 a art:Periodical ; art:name "삼광" .
+inst:I000303 a art:Workplace ; art:name "삼문사" .
+inst:I000304 a art:Periodical ; art:name "삼사문학" .
+inst:I000305 a art:Periodical ; art:name "삼천리" .
+inst:I000306 a art:Periodical ; art:name "삼천리문학" .
+inst:I000307 a art:Periodical ; art:name "상공세계" .
+inst:I000308 a art:Periodical ; art:name "상공월보" .
+inst:I000309 a art:Periodical ; art:name "상업계" .
+inst:I000310 a art:School ; art:name "상하이 호강대학" .
+inst:I000311 a art:Periodical ; art:name "새벗" .
+inst:I000312 a art:Periodical ; art:name "새별" .
+inst:I000313 a art:Periodical ; art:name "새사람" .
+inst:I000314 a art:Group ; art:name "색동회" .
+inst:I000315 a art:Workplace ; art:name "생리사" .
+inst:I000316 a art:Periodical ; art:name "생의 성" .
+inst:I000317 a art:Periodical ; art:name "생장" .
+inst:I000318 a art:Periodical ; art:name "서광" .
+inst:I000319 a art:Periodical ; art:name "서북학회월보" .
+inst:I000320 a art:Periodical ; art:name "서우" .
+inst:I000321 a art:Periodical ; art:name "서울" .
+inst:I000322 a art:Place ; art:name "서울 동대문" .
+inst:I000323 a art:Place ; art:name "서울 종로" .
+inst:I000324 a art:School ; art:name "서울 중동중학교" .
+inst:I000325 a art:Workplace ; art:name "서울대학교" .
+inst:I000326 a art:Workplace ; art:name "서울신문사" .
+inst:I000327 a art:Group ; art:name "서울지검 보도연맹 " .
+inst:I000328 a art:School ; art:name "서화미술회" .
+inst:I000329 a art:Group ; art:name "서화협회" .
+inst:I000330 a art:Periodical ; art:name "서화협회전" .
+inst:I000331 a art:School ; art:name "선린중학교" .
+inst:I000332 a art:Periodical ; art:name "선민" .
+inst:I000333 a art:Periodical ; art:name "선원" .
+inst:I000334 a art:Workplace ; art:name "성균관대학교" .
+inst:I000335 a art:Periodical ; art:name "성서조선" .
+inst:I000336 a art:Periodical ; art:name "성화" .
+inst:I000337 a art:Group ; art:name "세계어학회" .
+inst:I000338 a art:Periodical ; art:name "세광" .
+inst:I000339 a art:Periodical ; art:name "세텬사의 긔별" .
+inst:I000340 a art:Periodical ; art:name "소녀계" .
+inst:I000341 a art:Periodical ; art:name "소년" .
+inst:I000342 a art:Periodical ; art:name "소년(1937)" .
+inst:I000343 a art:Periodical ; art:name "소년계" .
+inst:I000344 a art:Periodical ; art:name "소년세계" .
+inst:I000345 a art:Periodical ; art:name "소년시대" .
+inst:I000346 a art:Periodical ; art:name "소년중앙" .
+inst:I000347 a art:Periodical ; art:name "소년한반도" .
+inst:I000348 a art:School ; art:name "소르본 대학" .
+inst:I000349 a art:Place ; art:name "수원" .
+inst:I000350 a art:School ; art:name "수원 삼일여학교" .
+inst:I000351 a art:Periodical ; art:name "순문예" .
+inst:I000352 a art:Periodical ; art:name "습작시대" .
+inst:I000353 a art:Periodical ; art:name "시건설" .
+inst:I000354 a art:Workplace ; art:name "시건설사" .
+inst:I000355 a art:Periodical ; art:name "시대공론" .
+inst:I000356 a art:Periodical ; art:name "시대상" .
+inst:I000357 a art:Workplace ; art:name "시대일보" .
+inst:I000358 a art:Periodical ; art:name "시림" .
+inst:I000359 a art:Periodical ; art:name "시문학" .
+inst:I000360 a art:Periodical ; art:name "시사평론" .
+inst:I000361 a art:Periodical ; art:name "시성" .
+inst:I000362 a art:Periodical ; art:name "시와 시론" .
+inst:I000363 a art:Periodical ; art:name "시원" .
+inst:I000364 a art:Periodical ; art:name "시인부락" .
+inst:I000365 a art:Workplace ; art:name "시인부락사" .
+inst:I000366 a art:Workplace ; art:name "시인춘추사" .
+inst:I000367 a art:Group ; art:name "시장미술사" .
+inst:I000368 a art:Periodical ; art:name "시조" .
+inst:I000369 a art:Periodical ; art:name "시종" .
+inst:I000370 a art:Periodical ; art:name "시천교월보" .
+inst:I000371 a art:Periodical ; art:name "시촌" .
+inst:I000372 a art:School ; art:name "시카고 셔우드 음악학교(SHERWOOD)" .
+inst:I000373 a art:Periodical ; art:name "시학" .
+inst:I000374 a art:Workplace ; art:name "시학사" .
+inst:I000375 a art:Periodical ; art:name "신가정" .
+inst:I000376 a art:Group ; art:name "신간회" .
+inst:I000377 a art:Periodical ; art:name "신건설" .
+inst:I000378 a art:Periodical ; art:name "신계단" .
+inst:I000379 a art:Periodical ; art:name "신광" .
+inst:I000380 a art:Periodical ; art:name "신동아" .
+inst:I000381 a art:Periodical ; art:name "신만몽" .
+inst:I000382 a art:School ; art:name "신명보통학교" .
+inst:I000383 a art:Periodical ; art:name "신문계" .
+inst:I000384 a art:Periodical ; art:name "신문세계" .
+inst:I000385 a art:Periodical ; art:name "신민" .
+inst:I000386 a art:Periodical ; art:name "신민공론" .
+inst:I000387 a art:Group ; art:name "신사조" .
+inst:I000388 a art:Periodical ; art:name "신사회(1925)" .
+inst:I000389 a art:Periodical ; art:name "신사회(1926)" .
+inst:I000390 a art:Periodical ; art:name "신상주" .
+inst:I000391 a art:Periodical ; art:name "신생" .
+inst:I000392 a art:Periodical ; art:name "신생명(1923)" .
+inst:I000393 a art:Periodical ; art:name "신생명(1935)" .
+inst:I000394 a art:Periodical ; art:name "신생활" .
+inst:I000395 a art:Periodical ; art:name "신세계" .
+inst:I000396 a art:Periodical ; art:name "신세기" .
+inst:I000397 a art:Periodical ; art:name "신소년" .
+inst:I000398 a art:Periodical ; art:name "신시단" .
+inst:I000399 a art:Periodical ; art:name "신시대" .
+inst:I000400 a art:Periodical ; art:name "신시대(1929)" .
+inst:I000401 a art:Periodical ; art:name "신시대(1936)" .
+inst:I000402 a art:Periodical ; art:name "신시대(1941)" .
+inst:I000403 a art:Periodical ; art:name "신아동" .
+inst:I000404 a art:Periodical ; art:name "신앙세계" .
+inst:I000405 a art:Periodical ; art:name "신여성" .
+inst:I000406 a art:Periodical ; art:name "신여자" .
+inst:I000407 a art:Periodical ; art:name "신인간" .
+inst:I000408 a art:Periodical ; art:name "신인문학" .
+inst:I000409 a art:Group ; art:name "신조" .
+inst:I000410 a art:Periodical ; art:name "신조선(1927" .
+inst:I000411 a art:Periodical ; art:name "신조선(1927)" .
+inst:I000412 a art:Periodical ; art:name "신조선(1931)" .
+inst:I000413 a art:Periodical ; art:name "신지식" .
+inst:I000414 a art:Periodical ; art:name "신진소년" .
+inst:I000415 a art:Periodical ; art:name "신천지" .
+inst:I000416 a art:Periodical ; art:name "신취미" .
+inst:I000417 a art:Periodical ; art:name "신통" .
+inst:I000418 a art:Periodical ; art:name "신학세계" .
+inst:I000419 a art:Periodical ; art:name "신학지남" .
+inst:I000420 a art:Periodical ; art:name "신한청년" .
+inst:I000421 a art:Group ; art:name "신회화예술협회" .
+inst:I000422 a art:Periodical ; art:name "신흥" .
+inst:I000423 a art:Periodical ; art:name "신흥영화" .
+inst:I000424 a art:Periodical ; art:name "신흥예술" .
+inst:I000425 a art:Group ; art:name "신흥예술파구락부" .
+inst:I000426 a art:Periodical ; art:name "신흥조선" .
+inst:I000427 a art:School ; art:name "신흥학교" .
+inst:I000428 a art:Periodical ; art:name "실생활" .
+inst:I000429 a art:Periodical ; art:name "실업지조선" .
+inst:I000430 a art:Periodical ; art:name "실화" .
+inst:I000431 a art:Periodical ; art:name "십자군" .
+inst:I000432 a art:Periodical ; art:name "아" .
+inst:I000433 a art:Periodical ; art:name "아동문예" .
+inst:I000434 a art:Periodical ; art:name "아등(우리들)" .
+inst:I000435 a art:Group ; art:name "아방·가르드 예술가클럽" .
+inst:I000436 a art:Group ; art:name "아방가르드" .
+inst:I000437 a art:Group ; art:name "아방가르드 양화연구소" .
+inst:I000438 a art:Group ; art:name "아방가르드 조영집단" .
+inst:I000439 a art:Workplace ; art:name "아사" .
+inst:I000440 a art:Periodical ; art:name "아성" .
+inst:I000441 a art:School ; art:name "아오야마초등학교" .
+inst:I000442 a art:Periodical ; art:name "아이동무" .
+inst:I000443 a art:Periodical ; art:name "아이들보이" .
+inst:I000444 a art:Periodical ; art:name "아희생활(아이생활)" .
+inst:I000445 a art:Place ; art:name "안성" .
+inst:I000446 a art:School ; art:name "안좌공립보통학교" .
+inst:I000447 a art:Periodical ; art:name "애중" .
+inst:I000448 a art:Group ; art:name "액션" .
+inst:I000449 a art:Periodical ; art:name "야담" .
+inst:I000450 a art:Periodical ; art:name "야뢰" .
+inst:I000451 a art:Periodical ; art:name "어린이" .
+inst:I000452 a art:Workplace ; art:name "어린이신문" .
+inst:I000453 a art:Periodical ; art:name "업" .
+inst:I000454 a art:Group ; art:name "에콜·드·도쿄" .
+inst:I000455 a art:Periodical ; art:name "여성" .
+inst:I000456 a art:Periodical ; art:name "여성조선" .
+inst:I000457 a art:Periodical ; art:name "여성지우" .
+inst:I000458 a art:Periodical ; art:name "여시" .
+inst:I000459 a art:Periodical ; art:name "여인" .
+inst:I000460 a art:Periodical ; art:name "여자계" .
+inst:I000461 a art:Workplace ; art:name "여자미술학사" .
+inst:I000462 a art:Periodical ; art:name "여자시론" .
+inst:I000463 a art:Workplace ; art:name "여자야학교" .
+inst:I000464 a art:Workplace ; art:name "여주공립보통학교" .
+inst:I000465 a art:Group ; art:name "연극운동" .
+inst:I000466 a art:Group ; art:name "연악회" .
+inst:I000467 a art:School ; art:name "연희전문학교" .
+inst:I000468 a art:Periodical ; art:name "열음지이" .
+inst:I000469 a art:Group ; art:name "염군사" .
+inst:I000470 a art:Group ; art:name "영과회" .
+inst:I000471 a art:Group ; art:name "영대" .
+inst:I000472 a art:Periodical ; art:name "영데이( The Young Day)" .
+inst:I000473 a art:Group ; art:name "영화감독구락부" .
+inst:I000474 a art:Periodical ; art:name "영화보" .
+inst:I000475 a art:Periodical ; art:name "영화시대" .
+inst:I000476 a art:Group ; art:name "영화연구회" .
+inst:I000477 a art:Periodical ; art:name "영화연극" .
+inst:I000478 a art:Periodical ; art:name "영화조선" .
+inst:I000479 a art:Periodical ; art:name "예술" .
+inst:I000480 a art:Group ; art:name "예술시장" .
+inst:I000481 a art:Group ; art:name "예술협회" .
+inst:I000482 a art:Group ; art:name "오과회" .
+inst:I000483 a art:School ; art:name "오산고등보통학교" .
+inst:I000484 a art:School ; art:name "오산학교" .
+inst:I000485 a art:School ; art:name "옥천공립보통학교" .
+inst:I000486 a art:School ; art:name "와세다 대학" .
+inst:I000487 a art:Place ; art:name "용인" .
+inst:I000488 a art:Periodical ; art:name "우리의 가뎡" .
+inst:I000489 a art:Periodical ; art:name "우리집" .
+inst:I000490 a art:Periodical ; art:name "웅계" .
+inst:I000491 a art:Workplace ; art:name "웅계사" .
+inst:I000492 a art:Periodical ; art:name "원고시대" .
+inst:I000493 a art:Group ; art:name "원산 독서인구락부" .
+inst:I000494 a art:Group ; art:name "원산기자구락부" .
+inst:I000495 a art:Periodical ; art:name "원산시론" .
+inst:I000496 a art:Group ; art:name "원산청년회" .
+inst:I000497 a art:Periodical ; art:name "원예지우" .
+inst:I000498 a art:Periodical ; art:name "월간 매신" .
+inst:I000499 a art:Periodical ; art:name "월간 야담" .
+inst:I000500 a art:Periodical ; art:name "월간매신" .
+inst:I000501 a art:Periodical ; art:name "월간야담" .
+inst:I000502 a art:Periodical ; art:name "월미" .
+inst:I000503 a art:Periodical ; art:name "유년" .
+inst:I000504 a art:Periodical ; art:name "유도" .
+inst:I000505 a art:Periodical ; art:name "유심" .
+inst:I000506 a art:Workplace ; art:name "을유문화사" .
+inst:I000507 a art:Periodical ; art:name "음악계" .
+inst:I000508 a art:Periodical ; art:name "음樂과 시" .
+inst:I000509 a art:Periodical ; art:name "이과회" .
+inst:I000510 a art:Periodical ; art:name "이러타" .
+inst:I000511 a art:Periodical ; art:name "이문당" .
+inst:I000512 a art:Periodical ; art:name "이시이 바쿠 무용 발표회" .
+inst:I000513 a art:Group ; art:name "이시이무용단" .
+inst:I000514 a art:School ; art:name "이천공립보통학교" .
+inst:I000515 a art:Workplace ; art:name "이화보육학교" .
+inst:I000516 a art:Workplace ; art:name "이화여자전문학교" .
+inst:I000517 a art:Group ; art:name "인문지리학회" .
+inst:I000518 a art:Periodical ; art:name "인문평론" .
+inst:I000519 a art:Place ; art:name "인천" .
+inst:I000520 a art:School ; art:name "인천상업학교" .
+inst:I000521 a art:Group ; art:name "일본 빅타축음기주식회사 경성지점" .
+inst:I000522 a art:Periodical ; art:name "일본국민" .
+inst:I000523 a art:Periodical ; art:name "일월시보" .
+inst:I000524 a art:School ; art:name "임명보통학교" .
+inst:I000525 a art:Periodical ; art:name "자선부인회잡지" .
+inst:I000526 a art:Periodical ; art:name "자오선" .
+inst:I000527 a art:Workplace ; art:name "자오선사" .
+inst:I000528 a art:Periodical ; art:name "자활" .
+inst:I000529 a art:Periodical ; art:name "작품(1938)" .
+inst:I000530 a art:Periodical ; art:name "작품(1939)" .
+inst:I000531 a art:Periodical ; art:name "잘씨" .
+inst:I000532 a art:Periodical ; art:name "잡지 가면" .
+inst:I000533 a art:Periodical ; art:name "잡지 극예술" .
+inst:I000534 a art:Periodical ; art:name "잡지 문학" .
+inst:I000535 a art:Periodical ; art:name "잡지 아" .
+inst:I000536 a art:Periodical ; art:name "잡지 음악" .
+inst:I000537 a art:Periodical ; art:name "잡지 학생" .
+inst:I000538 a art:Periodical ; art:name "잡지 해외문학" .
+inst:I000539 a art:Periodical ; art:name "장미" .
+inst:I000540 a art:Periodical ; art:name "장미촌" .
+inst:I000541 a art:Periodical ; art:name "장산" .
+inst:I000542 a art:Periodical ; art:name "장학보" .
+inst:I000543 a art:Periodical ; art:name "장한" .
+inst:I000544 a art:Group ; art:name "재건 남조선미술동맹" .
+inst:I000545 a art:Group ; art:name "재동경미술학생협회" .
+inst:I000546 a art:Group ; art:name "재일본동경조선유학생학우회" .
+inst:I000547 a art:Group ; art:name "전국문화단체총연합회" .
+inst:I000548 a art:Periodical ; art:name "전기" .
+inst:I000549 a art:Place ; art:name "전남 강진" .
+inst:I000550 a art:Place ; art:name "전남 광산" .
+inst:I000551 a art:Place ; art:name "전남 신안" .
+inst:I000552 a art:Periodical ; art:name "전남평론" .
+inst:I000553 a art:Place ; art:name "전라남도" .
+inst:I000554 a art:Place ; art:name "전라북도" .
+inst:I000555 a art:School ; art:name "전북고창고등보통학교" .
+inst:I000556 a art:Periodical ; art:name "전선" .
+inst:I000557 a art:Group ; art:name "전위사진협회" .
+inst:I000558 a art:Group ; art:name "전위시대" .
+inst:I000559 a art:Group ; art:name "전조선기자대회" .
+inst:I000560 a art:Group ; art:name "전조선문필가협회" .
+inst:I000561 a art:Periodical ; art:name "절제생활" .
+inst:I000562 a art:Workplace ; art:name "정신여자고등학교" .
+inst:I000563 a art:Workplace ; art:name "정신여자중학교" .
+inst:I000564 a art:Periodical ; art:name "정음" .
+inst:I000565 a art:Periodical ; art:name "정진" .
+inst:I000566 a art:Group ; art:name "제3형이동맹" .
+inst:I000567 a art:Periodical ; art:name "제국미술원전람회" .
+inst:I000568 a art:Workplace ; art:name "제국미술학교" .
+inst:I000569 a art:Periodical ; art:name "조광" .
+inst:I000570 a art:Periodical ; art:name "조선(조선문)" .
+inst:I000571 a art:Periodical ; art:name "조선강단" .
+inst:I000572 a art:Group ; art:name "조선건축회" .
+inst:I000573 a art:Periodical ; art:name "조선과 건축" .
+inst:I000574 a art:Group ; art:name "조선극장" .
+inst:I000575 a art:Periodical ; art:name "조선노동공제회" .
+inst:I000576 a art:Periodical ; art:name "조선농민" .
+inst:I000577 a art:Periodical ; art:name "조선농민(1936)" .
+inst:I000578 a art:Periodical ; art:name "조선농인" .
+inst:I000579 a art:Group ; art:name "조선만미술가구락부" .
+inst:I000580 a art:Periodical ; art:name "조선문단" .
+inst:I000581 a art:Periodical ; art:name "조선문단 (속간)" .
+inst:I000582 a art:Periodical ; art:name "조선문예(1917)" .
+inst:I000583 a art:Periodical ; art:name "조선문예(1929)" .
+inst:I000584 a art:Group ; art:name "조선문인보국회" .
+inst:I000585 a art:Group ; art:name "조선문인협회" .
+inst:I000586 a art:Periodical ; art:name "조선문학" .
+inst:I000587 a art:Group ; art:name "조선문학가동맹" .
+inst:I000588 a art:Group ; art:name "조선문학건설본부" .
+inst:I000589 a art:Periodical ; art:name "조선물산장려회보" .
+inst:I000590 a art:Group ; art:name "조선미술가협회 " .
+inst:I000591 a art:Group ; art:name "조선미술건설본부" .
+inst:I000592 a art:Group ; art:name "조선미술동맹" .
+inst:I000593 a art:Periodical ; art:name "조선미술전람회" .
+inst:I000594 a art:Periodical ; art:name "조선민속" .
+inst:I000595 a art:Periodical ; art:name "조선불교계" .
+inst:I000596 a art:Periodical ; art:name "조선불교월보" .
+inst:I000597 a art:Periodical ; art:name "조선불교총보" .
+inst:I000598 a art:Periodical ; art:name "조선성공회보" .
+inst:I000599 a art:Group ; art:name "조선수리조합회" .
+inst:I000600 a art:Periodical ; art:name "조선시단" .
+inst:I000601 a art:Group ; art:name "조선신미술가협회" .
+inst:I000602 a art:Periodical ; art:name "조선어문학회보(조선어문)" .
+inst:I000603 a art:Group ; art:name "조선연극문화협회" .
+inst:I000604 a art:Group ; art:name "조선연극협회" .
+inst:I000605 a art:Periodical ; art:name "조선영화" .
+inst:I000606 a art:Group ; art:name "조선영화인협회" .
+inst:I000607 a art:Group ; art:name "조선영화제작주식회사" .
+inst:I000608 a art:Group ; art:name "조선영화주식회사" .
+inst:I000609 a art:Group ; art:name "조선음악가협회" .
+inst:I000610 a art:Group ; art:name "조선음악협회" .
+inst:I000611 a art:Workplace ; art:name "조선일보" .
+inst:I000612 a art:School ; art:name "조선정악전습소" .
+inst:I000613 a art:Group ; art:name "조선조형동맹" .
+inst:I000614 a art:Periodical ; art:name "조선종교공론" .
+inst:I000615 a art:Group ; art:name "조선주택영단" .
+inst:I000616 a art:Workplace ; art:name "조선중앙일보" .
+inst:I000617 a art:Periodical ; art:name "조선지광" .
+inst:I000618 a art:Periodical ; art:name "조선체육계" .
+inst:I000619 a art:Workplace ; art:name "조선총독부" .
+inst:I000620 a art:Group ; art:name "조선키네마주식회사" .
+inst:I000621 a art:Periodical ; art:name "조음" .
+inst:I000622 a art:Group ; art:name "조형미술연구소" .
+inst:I000623 a art:Periodical ; art:name "종교시보" .
+inst:I000624 a art:School ; art:name "종로고등보통학교" .
+inst:I000625 a art:Periodical ; art:name "주일학교연구" .
+inst:I000626 a art:Periodical ; art:name "주일학교잡지" .
+inst:I000627 a art:Group ; art:name "주정파미술회" .
+inst:I000628 a art:Periodical ; art:name "중명" .
+inst:I000629 a art:Periodical ; art:name "중성" .
+inst:I000630 a art:Periodical ; art:name "중앙" .
+inst:I000631 a art:School ; art:name "중앙고등보통학교" .
+inst:I000632 a art:School ; art:name "중앙기독교청년회" .
+inst:I000633 a art:Workplace ; art:name "중앙보육학교" .
+inst:I000634 a art:Workplace ; art:name "중앙일보" .
+inst:I000635 a art:Workplace ; art:name "중외일보" .
+inst:I000636 a art:Periodical ; art:name "지기금지" .
+inst:I000637 a art:Periodical ; art:name "진단학보" .
+inst:I000638 a art:School ; art:name "진명여자보통고등학교" .
+inst:I000639 a art:Periodical ; art:name "진생" .
+inst:I000640 a art:Periodical ; art:name "집단" .
+inst:I000641 a art:Periodical ; art:name "쩌날리즘" .
+inst:I000642 a art:Periodical ; art:name "창공" .
+inst:I000643 a art:Group ; art:name "창광회" .
+inst:I000644 a art:Workplace ; art:name "창문사" .
+inst:I000645 a art:Group ; art:name "창조" .
+inst:I000646 a art:Periodical ; art:name "천국복음" .
+inst:I000647 a art:Periodical ; art:name "천도교회월보" .
+inst:I000648 a art:School ; art:name "철원 사립봉명학교" .
+inst:I000649 a art:School ; art:name "철원 읍내 간이농업학교" .
+inst:I000650 a art:Periodical ; art:name "철필" .
+inst:I000651 a art:Periodical ; art:name "청년" .
+inst:I000652 a art:Periodical ; art:name "청년조선" .
+inst:I000653 a art:Group ; art:name "청복극장" .
+inst:I000654 a art:Periodical ; art:name "청색지" .
+inst:I000655 a art:Group ; art:name "청전화숙" .
+inst:I000656 a art:Periodical ; art:name "청춘" .
+inst:I000657 a art:Group ; art:name "청춘좌" .
+inst:I000658 a art:Periodical ; art:name "초원" .
+inst:I000659 a art:Group ; art:name "최승희무용연구소" .
+inst:I000660 a art:Group ; art:name "추상·창조" .
+inst:I000661 a art:Group ; art:name "축지소극장" .
+inst:I000662 a art:Periodical ; art:name "춘추" .
+inst:I000663 a art:Group ; art:name "춘추극장" .
+inst:I000664 a art:Periodical ; art:name "출발" .
+inst:I000665 a art:Place ; art:name "충남 공주" .
+inst:I000666 a art:Place ; art:name "충북 옥천" .
+inst:I000667 a art:Place ; art:name "충청남도" .
+inst:I000668 a art:Place ; art:name "충청북도" .
+inst:I000669 a art:Periodical ; art:name "취산보림" .
+inst:I000670 a art:Periodical ; art:name "카톨릭청년" .
+inst:I000671 a art:Workplace ; art:name "카페 쓰루" .
+inst:I000672 a art:Group ; art:name "카프" .
+inst:I000673 a art:School ; art:name "컬럼비아대학교" .
+inst:I000674 a art:Workplace ; art:name "콜럼비아레코드사" .
+inst:I000675 a art:Group ; art:name "키네마준보" .
+inst:I000676 a art:Periodical ; art:name "탐구" .
+inst:I000677 a art:Periodical ; art:name "태서문예신보" .
+inst:I000678 a art:Periodical ; art:name "태양" .
+inst:I000679 a art:Group ; art:name "태양극단" .
+inst:I000680 a art:Workplace ; art:name "태양신문" .
+inst:I000681 a art:School ; art:name "태평양미술학교" .
+inst:I000682 a art:Group ; art:name "태평양화회연구소" .
+inst:I000683 a art:Group ; art:name "토월회" .
+inst:I000684 a art:School ; art:name "통영보통학교" .
+inst:I000685 a art:Periodical ; art:name "파리도쿄신흥미술전람회" .
+inst:I000686 a art:Group ; art:name "파스큘라" .
+inst:I000687 a art:Periodical ; art:name "평범" .
+inst:I000688 a art:Place ; art:name "평북 곽산" .
+inst:I000689 a art:Place ; art:name "평북 정주" .
+inst:I000690 a art:Place ; art:name "평안남도" .
+inst:I000691 a art:Place ; art:name "평안북도" .
+inst:I000692 a art:Place ; art:name "평양" .
+inst:I000693 a art:School ; art:name "평양 숭덕소학교" .
+inst:I000694 a art:School ; art:name "평양 숭실중학교" .
+inst:I000695 a art:School ; art:name "평양 숭실학교 대학부" .
+inst:I000696 a art:School ; art:name "평양고등보통학교" .
+inst:I000697 a art:Place ; art:name "평양남도" .
+inst:I000698 a art:School ; art:name "평양보통학교" .
+inst:I000699 a art:School ; art:name "평양북도의주양실학원" .
+inst:I000700 a art:Group ; art:name "평양양화협회" .
+inst:I000701 a art:School ; art:name "평양중동학교" .
+inst:I000702 a art:Periodical ; art:name "폐허" .
+inst:I000703 a art:Periodical ; art:name "폐허이후" .
+inst:I000704 a art:Group ; art:name "표준어사정위원회" .
+inst:I000705 a art:Periodical ; art:name "풍림" .
+inst:I000706 a art:Periodical ; art:name "학등" .
+inst:I000707 a art:Periodical ; art:name "학생" .
+inst:I000708 a art:Periodical ; art:name "학생계" .
+inst:I000709 a art:Periodical ; art:name "학우구樂부" .
+inst:I000710 a art:Periodical ; art:name "학지광" .
+inst:I000711 a art:Periodical ; art:name "학창" .
+inst:I000712 a art:Periodical ; art:name "한글" .
+inst:I000713 a art:Periodical ; art:name "한빛" .
+inst:I000714 a art:School ; art:name "한성법어학교" .
+inst:I000715 a art:Periodical ; art:name "한성일보" .
+inst:I000716 a art:Periodical ; art:name "한청" .
+inst:I000717 a art:Place ; art:name "함경남도" .
+inst:I000718 a art:Place ; art:name "함경남도 함흥" .
+inst:I000719 a art:Place ; art:name "함경북도" .
+inst:I000720 a art:School ; art:name "함경북도 배기미" .
+inst:I000721 a art:Place ; art:name "함경북도 학성" .
+inst:I000722 a art:School ; art:name "함남공립중학교" .
+inst:I000723 a art:School ; art:name "함북 경성공립고등학교" .
+inst:I000724 a art:Workplace ; art:name "함흥 영생고등보통학교" .
+inst:I000725 a art:Group ; art:name "해방운동" .
+inst:I000726 a art:Periodical ; art:name "해외 초현실주의 작품전" .
+inst:I000727 a art:Periodical ; art:name "해외문학" .
+inst:I000728 a art:Group ; art:name "해외문학파" .
+inst:I000729 a art:School ; art:name "해주공립보통학교" .
+inst:I000730 a art:School ; art:name "해주공립중학교" .
+inst:I000731 a art:Group ; art:name "향토회" .
+inst:I000732 a art:Periodical ; art:name "현대가정공론" .
+inst:I000733 a art:Group ; art:name "현대극장" .
+inst:I000734 a art:Periodical ; art:name "현대녀성" .
+inst:I000735 a art:Periodical ; art:name "현대부인" .
+inst:I000736 a art:Group ; art:name "현대일보" .
+inst:I000737 a art:Periodical ; art:name "현대평론" .
+inst:I000738 a art:Periodical ; art:name "형상" .
+inst:I000739 a art:Periodical ; art:name "혜성(제일선)" .
+inst:I000740 a art:Workplace ; art:name "혜화전문학교" .
+inst:I000741 a art:Periodical ; art:name "호남평론" .
+inst:I000742 a art:School ; art:name "호세이 대학" .
+inst:I000743 a art:Periodical ; art:name "호외" .
+inst:I000744 a art:Group ; art:name "혼고회화연구소" .
+inst:I000745 a art:Place ; art:name "혼슈 야마구치현" .
+inst:I000746 a art:Periodical ; art:name "홍법우" .
+inst:I000747 a art:School ; art:name "홍원보통학교" .
+inst:I000748 a art:Workplace ; art:name "홍익대학교" .
+inst:I000749 a art:Periodical ; art:name "화요보" .
+inst:I000750 a art:Periodical ; art:name "활부녀" .
+inst:I000751 a art:Periodical ; art:name "활천" .
+inst:I000752 a art:Group ; art:name "황군위문작가단" .
+inst:I000753 a art:Place ; art:name "황해남도 해주" .
+inst:I000754 a art:Place ; art:name "황해도" .
+inst:I000755 a art:Periodical ; art:name "회광" .
+inst:I000756 a art:Place ; art:name "회령" .
+inst:I000757 a art:School ; art:name "회령보통학교" .
+inst:I000758 a art:Periodical ; art:name "효종" .
+inst:I000759 a art:School ; art:name "후장대학" .
+inst:I000760 a art:School ; art:name "휘문고등보통학교" .
+inst:I000761 a art:School ; art:name "휘문중학교" .
+inst:I000762 a art:Group ; art:name "흥사단" .
+inst:I000763 a art:Periodical ; art:name "金강" .
+inst:I000764 a art:Periodical ; art:name "金성(1923)" .
+inst:I000765 a art:Periodical ; art:name "金성(1937)" .
+inst:I000766 a art:Periodical ; art:name "樂원(1933)" .
+inst:I000767 a art:Periodical ; art:name "樂원(1936)" .
+inst:I000768 a art:Periodical ; art:name "洛동친목학회학보" .
+inst:I000769 a art:Periodical ; art:name "勞동운동" .
+inst:I000770 a art:Periodical ; art:name "綠성" .
+inst:I000771 a art:Periodical ; art:name "復활운동" .
+inst:I000772 a art:Periodical ; art:name "靈계" .
+inst:I000773 a art:Periodical ; art:name "靈대" .
+inst:I000774 a art:Periodical ; art:name "靈우" .
+inst:I000775 a art:Periodical ; art:name "療양촌" .

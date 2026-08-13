@@ -1,0 +1,81 @@
+# excel_to_rdfstar_mapping.yml
+# 원천 엑셀(dataset_revised_20260715.xlsx) 컬럼이 RDF-Star 구조로 변환되는 규칙
+# 논문 2.3절에서 서술한 술어(predicate) 이층 구조를 반영한다.
+
+source_file: dataset_revised_20260715.xlsx
+source_sheet: (첫 번째 시트)
+source_columns:
+  - 작가
+  - 직업
+  - 국적
+  - 년도
+  - "소속 단체"
+  - "속성(출생/학교/소속단체/직장/발표매체)"
+  - 비고
+  - "출처(보완 필요)"
+total_rows: 51796
+
+identifier_scheme:
+  person:
+    prefix: "person:P"
+    width: 6
+    source_column: 작가
+    unique_count: 10440
+  institution:
+    prefix: "inst:I"
+    width: 6
+    source_column: "소속 단체"
+    unique_count: 775
+  relation_occurrence:
+    prefix: "rel:R"
+    width: 8
+    source: "엑셀 행 순서 (1건당 1개)"
+    unique_count: 51796
+
+predicate_hierarchy:
+  participatesIn:
+    description: "소속·참여 관계의 상위 술어 (rdfs:subPropertyOf로 하위 술어를 포괄)"
+    sub_predicates:
+      학교:    { predicate: art:studiedAt, class: art:School,    count: 1320 }
+      소속단체: { predicate: art:memberOf,  class: art:Group,     count: 684 }
+      직장:    { predicate: art:workedAt,  class: art:Workplace, count: 1092 }
+  publishedIn:
+    description: "발표매체 관계의 상위 술어. 비고(note) 필드의 표기를 기준으로 하위 술어를 배정한다."
+    sub_predicates:
+      art:authored:      { rule: "기본값 (작가로서 작품을 발표한 관계)", count: 48601 }
+      art:edited:         { rule: "비고에 '편집'이 포함된 경우", count: 0 }
+      art:issued:         { rule: "비고에 '발행'이 포함된 경우", count: 15 }
+      art:contributedTo:  { rule: "현재 데이터셋에서는 해당 사례 없음(스키마상으로만 존재)", count: 0 }
+      art:printed:         { rule: "현재 데이터셋에서는 해당 사례 없음(스키마상으로만 존재)", count: 0 }
+  bornIn:
+    description: "출생 관계는 단일값 사실이므로 상위 술어 없이 독립 술어로 유지"
+    predicate: art:bornIn
+    class: art:Place
+    count: 84
+
+column_to_field_mapping:
+  작가:        person subject (person:Pxxxxxx)
+  "소속 단체": object institution (inst:Ixxxxxx)
+  "속성(...)": attribute → predicate_hierarchy 규칙에 따라 predicate 배정 + art:attributeLabel(원문 그대로 보존)
+  년도:        art:year (xsd:gYear; 정규식으로 4자리 연도만 추출, 범위·추정 표기는 art:note에 원문 보존)
+  비고:        art:note (predicate 세분화의 판단 근거로도 사용)
+  "출처(보완 필요)": art:source
+  (행 번호):   art:sourceRow (예: "데이터수정!5786")
+  (고정값):    art:edition = edition:dataset_revised_20260715
+
+related_files:
+  - "RDB_재편_제안_파일.xlsx: Person_Info / School_Info / Workplace_Info / Group_Info / Other_Info 시트로 구성된 식별자 사전 및 구조 설계안. 완성된 관계형 데이터베이스가 아니라 인물·기관 식별자(person_id/institution_id)를 중복 없이 부여하기 위한 참조용 파일."
+
+known_data_quality_issues:
+  - "학교/직장/소속단체 관계의 출처 확보율은 각각 59.7%, 72.3%, 22.2%로 발표매체(100%)에 비해 낮음. 인물별 연보·사전류·개별 연구서를 대조하는 개별 확인 작업이 진행 중."
+  - "년도 컬럼에 종료 연도가 불확실한 표기가 존재하여, 정규식으로 시작 연도만 추출하고 원문은 note에 보존함."
+  - "제국미술학교/도쿄미술학교/도쿄음악학교 관련 자료가 상대적으로 집중 보완되어 있어, 이들 기관의 중심성 지표는 해석 시 자료 밀도를 함께 고려해야 함(논문 3.1~3.2절 참조)."
+  - "발표매체 관계의 하위 술어(art:contributedTo, art:printed)는 현재 데이터셋에서 실제 사례가 확인되지 않아 스키마상으로만 존재한다. 향후 원천 비고 정보가 보완되면 재분류될 수 있다."
+
+validation:
+  tool: rdflib 7.6.0 (Turtle parser)
+  result: >
+    schema.ttl은 오류 없이 파싱됨(83 triples), 술어 계층(rdfs:subPropertyOf)이 정상 확인됨.
+    relations_rdfstar.ttl에서 인용 트리플(<<...>>)을 제외한 일반 트리플 부분은
+    오류 없이 파싱됨(538,480 triples). 인용 트리플 구문 자체는 W3C RDF-Star 표준을 따르며
+    이를 지원하는 파서(Apache Jena, Oxigraph, GraphDB 등)에서 전체 검증이 가능함.
