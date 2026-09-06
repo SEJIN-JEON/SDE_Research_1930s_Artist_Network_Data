@@ -262,13 +262,12 @@ n  = n₀ / (1 + (n₀ − 1) / N)
 
 이 데이터셋을 사용하실 경우 논문과 저장소를 함께 인용해 주시기 바랍니다.
 
-```
-전세진, 「학술적 디지털 판본(Scholarly Digital Edition)으로서의 데이터 재편찬
-— 1930년대 예술가 네트워크 데이터를 중심으로」, 『한국현대문학연구』.
+<학술논문>
+전세진, 「학술적 디지털 판본(Scholarly Digital Edition)으로서의 데이터 재편찬— 1930년대 예술가 네트워크 데이터를 중심으로」, 『한국현대문학연구』79, 한국현대문학회, 2026.
 
+<관련 data>
 SDE_Research_1930s_Artist_Network_Data.
 https://github.com/SEJIN-JEON/SDE_Research_1930s_Artist_Network_Data
-```
 
 ## 9. 라이선스
 
