@@ -1,0 +1,38 @@
+{
+  "population_N": 51796,
+  "injections_k": 500,
+  "true_error_rate": 0.009653255077612171,
+  "mutated_fields": [
+    "note",
+    "predicate",
+    "source",
+    "year"
+  ],
+  "sample_size_n": 1780,
+  "expected_detections": 17.182794038149666,
+  "actual_detections": 28,
+  "observed_error_rate": 0.01573,
+  "wilson_95_ci": [
+    0.010905,
+    0.022641
+  ],
+  "field_error_counts": {
+    "subject": 0,
+    "predicate": 5,
+    "object": 0,
+    "year": 9,
+    "attributeLabel": 0,
+    "note": 9,
+    "source": 5,
+    "edition": 0
+  },
+  "hypergeometric_99_prediction_interval": [
+    8,
+    28
+  ],
+  "detections_within_prediction_interval": true,
+  "errors_detected": true,
+  "verdict": "PASS",
+  "sampling_seed": 42,
+  "injection_seed": 43
+}

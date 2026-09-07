@@ -1,0 +1,54 @@
+이 저장소는 데이터와 코드에 서로 다른 라이선스를 적용합니다.
+
+================================================================================
+1. 데이터 파일 (*.csv, *.ttl, *.xlsx, *.json)
+================================================================================
+
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+귀하는 어떠한 매체나 형식으로도 자료를 복제·재배포할 수 있으며,
+자료를 리믹스·변형하거나 2차적 저작물을 작성할 수 있습니다.
+영리 목적으로도 이용할 수 있습니다.
+
+다만 적절한 출처를 밝히고, 변경이 있을 경우 이를 표시해야 합니다.
+
+권장 출처 표기:
+    전세진, 「학술적 디지털 판본(Scholarly Digital Edition)으로서의 데이터
+    재편찬 — 1930년대 예술가 네트워크 데이터를 중심으로」, 『한국현대문학연구』.
+    https://github.com/SEJIN-JEON/SDE_Research_1930s_Artist_Network_Data
+
+--------------------------------------------------------------------------------
+제3자 자료에 관한 고지
+
+원천 자료에 포함된 서지 정보 가운데 제3자가 구축한 데이터베이스에서 유래한
+항목은 해당 제공처의 이용 조건을 따릅니다. 각 관계 발생 기록의 art:source
+필드에 출처가 명시되어 있습니다.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+2. 코드 파일 (*.py, *.yml)
+================================================================================
+
+MIT License
+
+Copyright (c) 2026 전세진 (Sejin Jeon)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

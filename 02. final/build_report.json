@@ -1,0 +1,89 @@
+{
+  "input": {
+    "source_file": "RDB_재편_제안.xlsx",
+    "source_sheet": "SDE_ver.2(재편찬 데이터셋)",
+    "source_relation_rows": 51796,
+    "person_master_rows": 10440,
+    "institution_master_rows": 775
+  },
+  "output": {
+    "persons": 10440,
+    "institutions": 775,
+    "relation_occurrences": 51796,
+    "predicate_distribution": {
+      "art:authored": 48601,
+      "art:studiedAt": 1320,
+      "art:workedAt": 1092,
+      "art:memberOf": 684,
+      "art:bornIn": 84,
+      "art:issued": 15
+    },
+    "attribute_distribution": {
+      "발표매체": 48616,
+      "학교": 1320,
+      "직장": 1092,
+      "소속단체": 684,
+      "출생": 84
+    },
+    "source_field_completeness": "100.0%",
+    "literature_source_rate_overall": "95.3%"
+  },
+  "identifier_convention": {
+    "rule": "relation_id 번호 n ↔ sourceRow 번호 n+1",
+    "verified_all_rows": true
+  },
+  "person_matching": {
+    "fallback_rows": 172,
+    "fallback_unique_persons": 48,
+    "tier_breakdown": {
+      "name+nationality": 171,
+      "name-only": 1
+    },
+    "unresolved_rows": 0
+  },
+  "multi_role_notes": [
+    {
+      "sourceRow": "데이터수정!15780",
+      "note": "박길룡 편집 및 발행(1940.4-1940.11)"
+    }
+  ],
+  "relation_type_summary": [
+    {
+      "관계유형": "출생",
+      "빈도수": 84,
+      "문헌출처_확인건수": 0,
+      "문헌출처_확인률(%)": 0.0
+    },
+    {
+      "관계유형": "학교",
+      "빈도수": 1320,
+      "문헌출처_확인건수": 779,
+      "문헌출처_확인률(%)": 59.0
+    },
+    {
+      "관계유형": "소속단체",
+      "빈도수": 684,
+      "문헌출처_확인건수": 120,
+      "문헌출처_확인률(%)": 17.5
+    },
+    {
+      "관계유형": "직장",
+      "빈도수": 1092,
+      "문헌출처_확인건수": 775,
+      "문헌출처_확인률(%)": 71.0
+    },
+    {
+      "관계유형": "발표매체",
+      "빈도수": 48616,
+      "문헌출처_확인건수": 47664,
+      "문헌출처_확인률(%)": 98.0
+    },
+    {
+      "관계유형": "합계",
+      "빈도수": 51796,
+      "문헌출처_확인건수": 49338,
+      "문헌출처_확인률(%)": 95.3
+    }
+  ],
+  "exact_duplicate_rows_preserved": 11698
+}

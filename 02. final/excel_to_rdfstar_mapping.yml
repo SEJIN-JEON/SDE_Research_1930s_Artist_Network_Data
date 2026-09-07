@@ -1,0 +1,303 @@
+# ==============================================================================
+# excel_to_rdfstar_mapping.yml
+#
+# 원천 데이터가 RDF-Star 구조로 변환되는 규칙의 형식적 명세.
+# build_dataset.py의 실제 실행 결과를 그대로 반영한다.
+# 논문 3장 「재편찬 데이터의 설계 원칙과 구조」에 대응한다.
+# ==============================================================================
+
+edition: "edition:재편찬판본"
+generated_by: build_dataset.py
+generated_from: RDB_재편_제안.xlsx
+
+# ------------------------------------------------------------------------------
+# 입력
+# ------------------------------------------------------------------------------
+input:
+  file: RDB_재편_제안.xlsx
+  relation_sheet: "SDE_ver.2(재편찬 데이터셋)"
+  relation_rows: 51796
+  identifier_sheets:
+    person: "1. Person_Info"          # 10,440건
+    institution: "2. Group_Info"      # 775건
+  editorial_notes_sheet: "6. Notes"
+  columns:
+    - 작가
+    - 직업
+    - 국적
+    - 년도
+    - "소속 단체"
+    - "속성(출생/학교/소속단체/직장/발표매체)"
+    - 비고
+    - 출처
+
+# ------------------------------------------------------------------------------
+# 네임스페이스
+# ------------------------------------------------------------------------------
+namespaces:
+  art:     "https://sde1930.org/ontology#"
+  person:  "https://sde1930.org/person/"
+  inst:    "https://sde1930.org/institution/"
+  rel:     "https://sde1930.org/relation/"
+  edition: "https://sde1930.org/edition/"
+
+# ------------------------------------------------------------------------------
+# 식별자 체계
+# ------------------------------------------------------------------------------
+identifiers:
+  person:
+    pattern: "person:P######"
+    derivation: "'1. Person_Info' 시트의 Person_ID를 6자리로 재포맷"
+    count: 10440
+  institution:
+    pattern: "inst:I######"
+    derivation: "'2. Group_Info' 시트의 단체_ID를 6자리로 재포맷"
+    count: 775
+  relation_occurrence:
+    pattern: "rel:R########"
+    derivation: >
+      원천 시트의 n번째 데이터 행에 R{n:08d}를 부여한다. 행 순서를 어떤
+      단계에서도 재배열하지 않으므로 relation_id 번호 n과 art:sourceRow의
+      엑셀 행 번호 n+1 사이에 1:1 대응이 성립한다(헤더 1행 보정).
+      이 규약은 validate_dataset.py 2단계에서 전 행에 대해 검증된다.
+    count: 51796
+    example:
+      relation_id: rel:R00039212
+      sourceRow: "데이터수정!39213"
+
+# ------------------------------------------------------------------------------
+# 인물 식별자 해소
+# ------------------------------------------------------------------------------
+person_resolution:
+  strategy: 3단계 단계적 완화
+  tiers:
+    - level: 1
+      key: [작가, 직업, 국적]
+      match: 완전일치
+      rows: 51624
+    - level: 2
+      key: [작가, 국적]
+      condition: 후보가 유일할 때만 채택
+      rows: 171
+    - level: 3
+      key: [작가]
+      condition: 후보가 유일할 때만 채택
+      rows: 1
+  rationale: >
+    동일 인물이 여러 행에 등장할 때 직업·국적 필드가 일부 행에서만 공란으로
+    기재된 사례가 48명(172행)에서 확인된다. Person_Info의 '작가 이름'은
+    10,440명 전원이 유일하므로 3단계에서 해소가 보장된다.
+  unresolved_rows: 0
+  audit_trail: person_matching_exceptions.csv
+
+# ------------------------------------------------------------------------------
+# 술어 배정 규칙 (논문 3장 술어 이층 구조)
+# ------------------------------------------------------------------------------
+predicate_assignment:
+
+  참여관계:
+    superproperty: art:participatesIn
+    rationale: "인물이 특정 기관에 소속되어 활동하였다는 공통 성격"
+    rules:
+      - source_attribute: 학교
+        predicate: art:studiedAt
+        count: 1320
+      - source_attribute: 소속단체
+        predicate: art:memberOf
+        count: 684
+      - source_attribute: 직장
+        predicate: art:workedAt
+        count: 1092
+
+  발표매체관계:
+    superproperty: art:publishedIn
+    rationale: "소속 여부가 아니라 매체에 대해 수행한 역할의 문제"
+    discriminator: 비고(art:note) 필드의 역할 표기
+    rules:
+      - predicate: art:issued
+        condition: "비고에 '발행' 포함"
+        priority: 1
+        count: 15
+      - predicate: art:edited
+        condition: "비고에 '편집' 포함"
+        priority: 2
+        count: 0
+      - predicate: art:authored
+        condition: 기본값
+        priority: 3
+        count: 48601
+      - predicate: art:contributedTo
+        condition: 스키마상 정의, 현 판본에 해당 사례 없음
+        count: 0
+      - predicate: art:printed
+        condition: 스키마상 정의, 현 판본에 해당 사례 없음
+        count: 0
+
+  출생관계:
+    superproperty: null
+    rationale: "한 인물에 대해 하나의 값만을 갖는 단일한 사실"
+    rules:
+      - source_attribute: 출생
+        predicate: art:bornIn
+        count: 84
+
+# ------------------------------------------------------------------------------
+# 필드 대응
+# ------------------------------------------------------------------------------
+field_mapping:
+  art:subject:
+    from: 작가
+    transform: 3단계 식별자 해소 후 person:P###### 부여
+  art:predicate:
+    from: "속성(...) + 비고"
+    transform: predicate_assignment 규칙 적용
+  art:object:
+    from: "소속 단체"
+    transform: "'2. Group_Info' 대조 후 inst:I###### 부여"
+  art:year:
+    from: 년도
+    transform: "정규식 \\d{4}로 첫 네 자리 연도만 추출. 범위·추정 표기의 원문은 비고에 보존"
+    datatype: xsd:gYear
+  art:attributeLabel:
+    from: "속성(...)"
+    transform: 원문 그대로 보존
+  art:note:
+    from: 비고
+    transform: 원문 그대로 보존. 구분자 치환 등 어떠한 정규화도 적용하지 않음
+  art:source:
+    from: 출처
+    transform: "공란은 '연구자'로 명시. 그 외에는 원문 그대로 보존"
+  art:sourceRow:
+    from: 행 위치
+    transform: "'데이터수정!{엑셀 행 번호}' 형식"
+  art:edition:
+    from: 고정값
+    value: "edition:재편찬판본"
+
+# ------------------------------------------------------------------------------
+# RDF-Star 구현 구조
+# ------------------------------------------------------------------------------
+rdfstar_structure:
+  description: >
+    각 관계 발생 기록은 세 층위로 표현된다. 논문 본문의 예시는 지면 제약상
+    축약 구문(인용 트리플에 속성을 직접 부여)으로 표기하였으나, 산출 파일에서는
+    완전 중복 행을 각각 독립적으로 보존해야 하므로 층위를 명시적으로 풀어 쓴다.
+    두 표기는 동일한 구조를 가리킨다.
+  layers:
+    - name: 기본 트리플
+      form: "person:P###### {predicate} inst:I###### ."
+      count: 20995
+      note: 고유한 인물-술어-기관 조합에 대해 1회만 선언
+    - name: 인용 트리플
+      form: "<< person:P art:authored inst:I >> art:hasOccurrence rel:R######## ."
+      count: 51796
+    - name: RelationOccurrence 노드
+      form: "rel:R######## a art:RelationOccurrence ; art:subject ... ."
+      count: 51796
+
+# ------------------------------------------------------------------------------
+# 편찬상의 결정
+# ------------------------------------------------------------------------------
+editorial_decisions:
+
+  완전중복_보존:
+    decision: 병합하지 않고 각각 독립적인 관계 발생 기록으로 보존
+    affected_rows: 11698
+    rationale: >
+      논문 3장. "하나의 관계에 대하여 서로 다른 자료가 서로 다른 정보를 제공할 때
+      그 차이를 병합하여 지우지 않고 병렬적으로 남겨 두려는" 설계 원칙.
+      서로 다른 해석의 가능성을 데이터 단계에서 미리 좁히지 않기 위한 장치다.
+    example: >
+      김관호와 도쿄미술학교의 1911년 관계는 원천에 두 행으로 기록되어 있다.
+      하나는 사사관계 확인 가능이라는 비고를 담고, 다른 하나는 비고 없이
+      같은 연도의 관계만을 반복한다. 두 기록을 모두 보존한다.
+
+  출처_연구자_표기:
+    decision: 출처가 문헌으로 특정되지 않는 관계는 공란이 아니라 '연구자'로 명시
+    rationale: >
+      공란을 채우기 위한 임시 처리가 아니라, 각 관계가 어떤 검증 단계에 있는지를
+      데이터 구조 자체에 남겨 두려는 장치다. 이후 연구가 어느 관계부터 우선적으로
+      문헌을 대조해야 하는지를 데이터가 스스로 드러내도록 한다.
+    consequence: >
+      출처 필드 충족률은 100%가 되지만 이를 문헌으로 확인된 비율과 동일시할 수 없다.
+      문헌출처 확인률은 relation_type_summary.csv에 별도로 산출되어 있다.
+
+  조광_직장:
+    decision: 관계 발생 기록에는 적용하지 않음
+    rationale: >
+      '6. Notes' 시트의 "직장에서 조광 삭제" 결정은 식별자 사전
+      ('2.Workplace_Info' 시트)에 적용된 것으로, 원천 관계 데이터에는
+      해당 7건이 그대로 남아 있다. 관계 발생 기록은 원천 51,796행 전체를
+      대상으로 하며, 이는 논문 3장이 보고하는 직장 1,092건과 정합한다.
+    affected_rows: 7
+
+  식별자_사전_참조범위:
+    decision: 조인 테이블은 사용하지 않고 인물·기관 특정에만 참조
+    rationale: >
+      논문 3장. 식별자 사전의 일부 조인 테이블이 미완성 상태이므로,
+      RDF-Star 변환에서는 원천 데이터셋의 행 단위 기록을 관계 발생 기록의
+      기준으로 삼는다.
+
+# ------------------------------------------------------------------------------
+# 알려진 한계
+# ------------------------------------------------------------------------------
+known_limitations:
+
+  - id: 복수역할_단일술어
+    description: >
+      비고에 '편집'과 '발행'이 함께 나타나는 1건(데이터수정!15780,
+      "박길룡 편집 및 발행(1940.4-1940.11)")은 발행을 우선 판정하여
+      art:issued 하나로만 분류된다. 편집 역할은 술어로 반영되지 않고
+      art:note 원문에만 보존된다. 한 관계 발생 기록당 하나의 술어만 부여하는
+      현재 스키마의 구조적 제약이며, 복수 역할을 모델링하려면 스키마 확장이
+      필요하다.
+    affected_rows: 1
+
+  - id: 미사용_술어
+    description: >
+      art:contributedTo와 art:printed는 스키마상 정의되어 있으나 현 판본에서
+      해당 사례가 확인되지 않는다. art:edited 역시 위 복수역할 사례가
+      발행으로 판정되어 실제 배정 건수는 0이다.
+
+  - id: 연도_단순화
+    description: >
+      년도 필드에 범위나 추정이 표기된 경우 정규식으로 첫 네 자리만 추출한다.
+      원문 표기는 art:note에 보존되지만, art:year만으로 질의할 경우
+      종료 시점 정보는 반영되지 않는다.
+
+  - id: 출처_표기_불일치
+    description: >
+      출처 문자열에 동일 문헌의 표기가 통일되지 않은 사례가 있다
+      (예: '나미가타 츠요시'와 '나미카타 츠요시'). 원문 보존 원칙에 따라
+      변환 단계에서 임의로 통합하지 않았으며, 원천 데이터 차원의 교정 대상이다.
+
+  - id: 문헌출처_확인률_편차
+    description: >
+      소속단체 관계의 문헌출처 확인률은 17.5%로 낮다. 이는 해당 관계의 상당수가
+      선행 연구나 개별 인물 조사를 통해 먼저 입력된 뒤 뒷받침 문헌을 하나씩
+      대조해야 하는 항목이기 때문이다. 발표매체 관계의 높은 확인률(98.0%)은
+      정리된 서지 데이터베이스를 활용할 수 있었던 사정을 반영하며,
+      1930년대 예술장의 실제 구조를 나타내는 지표로 읽어서는 안 된다.
+
+# ------------------------------------------------------------------------------
+# 검증
+# ------------------------------------------------------------------------------
+validation:
+  tool: validate_dataset.py
+  stages:
+    - stage: 1
+      name: 구문 검증
+      method: rdflib 7.6.0 Turtle 파서
+      result: 전 파일 파싱 성공
+    - stage: 2
+      name: 전수 정합성 검증
+      method: 집계 수준 불변식 13개 항목
+      result: 13개 항목 전부 통과
+    - stage: 3
+      name: 표본 검증
+      method: Cochran 공식 + 유한모집단 보정, 단순무작위추출, Wilson 신뢰구간
+      result: 4회 독립 실행 전부 오류 0건
+  detection_capability:
+    tool: mutation_test.py
+    method: 알려진 수의 오류를 주입한 뒤 탐지 건수가 초기하분포 예측구간에 부합하는지 확인
+    result: 정상 작동 확인

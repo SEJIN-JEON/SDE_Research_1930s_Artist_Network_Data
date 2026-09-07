@@ -1,0 +1,76 @@
+@prefix art:     <https://sde1930.org/ontology#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+################################################################################
+# 1930년대 예술가 네트워크 재편찬 데이터셋 — 온톨로지
+# 논문 3장 「재편찬 데이터의 설계 원칙과 구조」의 술어 이층 구조를 구현한다.
+################################################################################
+
+#-------------------------------------------------------------------- 클래스
+art:Person       a rdfs:Class ; rdfs:label "인물" .
+art:Institution  a rdfs:Class ; rdfs:label "기관" .
+art:Place        a rdfs:Class ; rdfs:label "장소" .
+
+art:School       a rdfs:Class ; rdfs:subClassOf art:Institution ; rdfs:label "학교" .
+art:Workplace    a rdfs:Class ; rdfs:subClassOf art:Institution ; rdfs:label "직장" .
+art:Group        a rdfs:Class ; rdfs:subClassOf art:Institution ; rdfs:label "소속단체" .
+art:Publication  a rdfs:Class ; rdfs:subClassOf art:Institution ; rdfs:label "발표매체" .
+
+# 관계 발생 기록: 인물-기관의 연결 그 자체를 독립적 기술 대상으로 삼는 노드
+art:RelationOccurrence a rdfs:Class ; rdfs:label "관계 발생 기록" .
+
+#-------------------------------------------------------- 술어 계층 (1) 소속·참여
+# 인물이 특정 기관에 소속되어 활동하였다는 공통 성격을 갖는 관계
+art:participatesIn a rdf:Property ; rdfs:label "참여" ;
+    rdfs:domain art:Person ; rdfs:range art:Institution .
+
+art:studiedAt  a rdf:Property ; rdfs:subPropertyOf art:participatesIn ;
+    rdfs:label "재학" ; rdfs:range art:School .        # 1,320건
+art:memberOf   a rdf:Property ; rdfs:subPropertyOf art:participatesIn ;
+    rdfs:label "소속" ; rdfs:range art:Group .         # 684건
+art:workedAt   a rdf:Property ; rdfs:subPropertyOf art:participatesIn ;
+    rdfs:label "재직" ; rdfs:range art:Workplace .     # 1,092건
+
+#-------------------------------------------------------- 술어 계층 (2) 발표매체
+# 소속 여부가 아니라 매체에 대해 수행한 역할의 문제
+art:publishedIn a rdf:Property ; rdfs:label "발표" ;
+    rdfs:domain art:Person ; rdfs:range art:Publication .
+
+art:authored      a rdf:Property ; rdfs:subPropertyOf art:publishedIn ;
+    rdfs:label "집필" .        # 48,601건
+art:edited        a rdf:Property ; rdfs:subPropertyOf art:publishedIn ;
+    rdfs:label "편집" .        # 0건
+art:issued        a rdf:Property ; rdfs:subPropertyOf art:publishedIn ;
+    rdfs:label "발행" .        # 15건
+art:contributedTo a rdf:Property ; rdfs:subPropertyOf art:publishedIn ;
+    rdfs:label "기여" .        # 스키마상 정의, 현 판본에 해당 사례 없음
+art:printed       a rdf:Property ; rdfs:subPropertyOf art:publishedIn ;
+    rdfs:label "인쇄" .        # 스키마상 정의, 현 판본에 해당 사례 없음
+
+#-------------------------------------------------------- 술어 계층 (3) 출생
+# 한 인물에 대해 하나의 값만을 갖는 단일한 사실이므로 상위 술어 없이 독립
+art:bornIn a rdf:Property ; rdfs:label "출생" ;
+    rdfs:domain art:Person ; rdfs:range art:Place .    # 84건
+
+#------------------------------------------- 관계 발생 기록 연결 및 기술 술어
+art:hasOccurrence a rdf:Property ; rdfs:label "관계 발생 기록 연결" ;
+    rdfs:range art:RelationOccurrence .
+
+art:subject        a rdf:Property ; rdfs:label "관계의 주체" ; rdfs:range art:Person .
+art:predicate      a rdf:Property ; rdfs:label "관계 유형" .
+art:object         a rdf:Property ; rdfs:label "관계의 대상" .
+art:year           a rdf:Property ; rdfs:label "관계 형성 시기" ; rdfs:range xsd:gYear .
+art:attributeLabel a rdf:Property ; rdfs:label "원천 데이터 속성명" ; rdfs:range xsd:string .
+art:note           a rdf:Property ; rdfs:label "보충 설명" ; rdfs:range xsd:string .
+art:source         a rdf:Property ; rdfs:label "관계의 출처" ; rdfs:range xsd:string .
+art:sourceRow      a rdf:Property ; rdfs:label "원천 데이터 행 번호" ; rdfs:range xsd:string .
+art:edition        a rdf:Property ; rdfs:label "판본 정보" .
+
+#-------------------------------------------------------------- 노드 기술 술어
+art:name              a rdf:Property ; rdfs:label "명칭" .
+art:job               a rdf:Property ; rdfs:label "직업" .
+art:nationality       a rdf:Property ; rdfs:label "국적" .
+art:relationTypeHint  a rdf:Property ; rdfs:label "기관 속성 구분" .

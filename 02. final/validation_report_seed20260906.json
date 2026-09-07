@@ -1,0 +1,131 @@
+{
+  "validated_at_seed": 20260906,
+  "stage1": {
+    "schema.ttl": {
+      "triples": 94,
+      "status": "OK"
+    },
+    "persons.ttl": {
+      "triples": 39554,
+      "status": "OK"
+    },
+    "institutions.ttl": {
+      "triples": 2325,
+      "status": "OK"
+    },
+    "relations_rdfstar.ttl": {
+      "triples_excluding_quoted_syntax": 588297,
+      "quoted_triples": 51796,
+      "status": "OK",
+      "note": "rdflib 7.6.0은 RDF-Star 인용 트리플 구문을 지원하지 않으므로 해당 구문을 치환한 뒤 나머지 문법을 검증하였다. 전체 구문 검증은 Apache Jena, Oxigraph, GraphDB 등 RDF-Star 지원 파서에서 가능하다."
+    }
+  },
+  "stage2": {
+    "checks": [
+      {
+        "항목": "행 수 보존 (원천 = 산출)",
+        "결과": "통과",
+        "비고": "51,796 = 51,796"
+      },
+      {
+        "항목": "relation_id 연속성 (결번·중복 없음)",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "relation_id ↔ sourceRow 규약 (n ↔ n+1)",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "sourceRow 원천 범위 내",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "인물 식별자 무결성 (참조 대상 존재)",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "기관 식별자 무결성 (참조 대상 존재)",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "인물 식별자 유일성",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "기관 식별자 유일성",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "술어 미배정 행 없음",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "출처 공란 없음 (연구자 정규화)",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "판본 정보 단일",
+        "결과": "통과",
+        "비고": "edition:재편찬판본"
+      },
+      {
+        "항목": "관계 유형별 빈도 보존",
+        "결과": "통과",
+        "비고": ""
+      },
+      {
+        "항목": "술어 계층 정합 (속성 → 술어 대응)",
+        "결과": "통과",
+        "비고": ""
+      }
+    ],
+    "passed": 13,
+    "failed": 0
+  },
+  "stage3": {
+    "method": "Cochran 공식 + 유한모집단 보정, 단순무작위추출(비복원)",
+    "population_N": 51796,
+    "confidence_level": 0.99,
+    "margin_of_error": 0.03,
+    "assumed_p": 0.5,
+    "z_value": 2.576,
+    "sample_size_n": 1780,
+    "random_seed": 20260906,
+    "errors_in_sample": 0,
+    "observed_error_rate": 0.0,
+    "wilson_95_ci": [
+      0.0,
+      0.002154
+    ],
+    "field_error_counts": {
+      "subject": 0,
+      "predicate": 0,
+      "object": 0,
+      "year": 0,
+      "attributeLabel": 0,
+      "note": 0,
+      "source": 0,
+      "edition": 0
+    },
+    "mismatch_details": [],
+    "verified_fields": [
+      "subject",
+      "predicate",
+      "object",
+      "year",
+      "attributeLabel",
+      "note",
+      "source",
+      "edition"
+    ]
+  }
+}
